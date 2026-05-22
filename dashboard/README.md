@@ -76,13 +76,43 @@ dashboard/
 └── vite.config.ts      # Vite configuration
 ```
 
-## 🔗 API Connection
+## ⚙️ Configuration
 
-The dashboard connects to the OpenWA API backend. Configure the API URL in environment variables:
+### Environment Variables
 
+Create a `.env` file in the dashboard directory or set variables before building:
+
+```bash
+# Required: API backend URL
+VITE_API_URL=http://localhost:2785
+```
+
+### VITE_API_URL
+
+The `VITE_API_URL` environment variable specifies the backend API endpoint that the dashboard connects to.
+
+**Local Development:**
 ```bash
 VITE_API_URL=http://localhost:2785
 ```
+
+**Remote/Production Deployment:**
+```bash
+# When API and dashboard are on different servers or domains
+VITE_API_URL=https://api.yourdomain.com
+
+# Example: Traefik-hosted setup with separate containers
+VITE_API_URL=http://openwa-api:2785
+```
+
+**Important:** This value is embedded at build time. Rebuild the dashboard after changing `VITE_API_URL`:
+```bash
+npm run build
+```
+
+## 🔗 API Connection
+
+The dashboard connects to the OpenWA API backend. Configure the API URL using the `VITE_API_URL` environment variable as shown above.
 
 ## 📄 License
 
