@@ -3,6 +3,7 @@ export default () => ({
 
   // Redis configuration
   redis: {
+    enabled: process.env.REDIS_ENABLED === 'true', // Must be set to 'true' to enable Redis features
     host: process.env.REDIS_HOST || 'localhost',
     port: parseInt(process.env.REDIS_PORT || '6379', 10),
     password: process.env.REDIS_PASSWORD,
