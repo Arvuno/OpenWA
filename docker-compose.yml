@@ -144,7 +144,7 @@ services:
     volumes:
       - redis-data:/data
     healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+      test: ['CMD', 'redis-cli', '-h', '${REDIS_HOST:-redis}', '-p', '${REDIS_PORT:-6379}', 'ping']
       interval: 5s
       timeout: 3s
       retries: 5
