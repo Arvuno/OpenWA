@@ -1,5 +1,5 @@
 /**
- * Cross-database column type helpers.
+ * Cross-database columnn type helpers.
  *
  * SQLite lacks native JSON and timestamp types, so we use `simple-json`
  * (JSON.stringify stored as TEXT) and `text` with DateTransformer.

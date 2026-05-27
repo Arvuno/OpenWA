@@ -363,11 +363,11 @@ export function Webhooks() {
         <div className="webhooks-table-container">
           <div className="webhooks-table">
             <div className="table-row header">
-              <span>{t('webhooks.columns.url')}</span>
-              <span>{t('webhooks.columns.events')}</span>
-              <span>{t('webhooks.columns.session')}</span>
-              <span>{t('webhooks.columns.status')}</span>
-              <span>{t('webhooks.columns.actions')}</span>
+              <span>{t('webhooks.columnns.url')}</span>
+              <span>{t('webhooks.columnns.events')}</span>
+              <span>{t('webhooks.columnns.session')}</span>
+              <span>{t('webhooks.columnns.status')}</span>
+              <span>{t('webhooks.columnns.actions')}</span>
             </div>
             {webhooks.length === 0 ? (
               <div className="empty-table-state">

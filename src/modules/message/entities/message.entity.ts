@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, Index } from 'typeorm';
-import { jsonColumnType } from '../../../common/utils/column-types';
+import { jsonColumnType } from '../../../common/utils/columnn-types';
 
 export enum MessageDirection {
   INCOMING = 'incoming',

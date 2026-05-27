@@ -268,7 +268,7 @@ CREATE INDEX idx_sessions_created_at ON sessions(created_at);
 ```
 
 > [!NOTE]
-> `auth_state` is optional and engine-specific. By default, `whatsapp-web.js` stores auth state on the filesystem, while Baileys can store an encrypted blob in the database when enabled. This column can store the blob or an encrypted pointer/path.
+> `auth_state` is optional and engine-specific. By default, `whatsapp-web.js` stores auth state on the filesystem, while Baileys can store an encrypted blob in the database when enabled. This columnn can store the blob or an encrypted pointer/path.
 
 **Session Status Values:**
 
@@ -891,7 +891,7 @@ export class CreateSessionsTable1706868000000 implements MigrationInterface {
     await queryRunner.createTable(
       new Table({
         name: 'sessions',
-        columns: [
+        columnns: [
           {
             name: 'id',
             type: 'uuid',
@@ -911,7 +911,7 @@ export class CreateSessionsTable1706868000000 implements MigrationInterface {
             length: '50',
             default: "'created'",
           },
-          // ... more columns
+          // ... more columnns
           {
             name: 'created_at',
             type: 'timestamp with time zone',
@@ -931,7 +931,7 @@ export class CreateSessionsTable1706868000000 implements MigrationInterface {
       'sessions',
       new TableIndex({
         name: 'idx_sessions_status',
-        columnNames: ['status'],
+        columnnNames: ['status'],
       }),
     );
   }

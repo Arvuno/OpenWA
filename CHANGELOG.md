@@ -84,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[P1] Database safety**: Default `DATABASE_SYNCHRONIZE` to false to prevent auto-schema changes in production
 - **[P1] Graceful shutdown**: Replace `process.exit()` with ShutdownService callback pattern
-- **[P1] PostgreSQL types**: Use native `jsonb` and `timestamp` column types when available
+- **[P1] PostgreSQL types**: Use native `jsonb` and `timestamp` columnn types when available
 - **[P1] Docker orchestration**: Remove duplicate Docker management from main.ts (use DockerService)
 - **[P1] Queue stub**: Remove unimplemented message queue processor that always threw errors
 - **[P2] Error visibility**: Add proper logging to all 12 empty catch blocks across backend services

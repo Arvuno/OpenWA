@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { DateTransformer } from '../../../common/transformers/date.transformer';
-import { jsonColumnType, dateColumnType } from '../../../common/utils/column-types';
+import { jsonColumnType, dateColumnType } from '../../../common/utils/columnn-types';
 
 export enum SessionStatus {
   CREATED = 'created',
