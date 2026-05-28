@@ -348,12 +348,12 @@ async function migrateTable(
         // Insert into PostgreSQL
         for (const row of rows) {
           try {
-            const columns = Object.keys(row);
+            const columnns = Object.keys(row);
             const values = Object.values(row);
             const placeholders = values.map((_, i) => `$${i + 1}`).join(', ');
 
             await pg.query(
-              `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${placeholders})
+              `INSERT INTO ${table} (${columnns.join(', ')}) VALUES (${placeholders})
                  ON CONFLICT DO NOTHING`,
               values,
             );
@@ -719,8 +719,8 @@ breaking_changes:
 
   database:
     - New tables: api_keys, webhook_logs
-    - Modified: sessions (added config JSON column)
-    - Modified: messages (added metadata column)
+    - Modified: sessions (added config JSON columnn)
+    - Modified: messages (added metadata columnn)
 ```
 
 #### Migration Steps

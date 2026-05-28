@@ -33,7 +33,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div style={{
-          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          display: 'flex', flexDirection: 'columnn', alignItems: 'center',
           justifyContent: 'center', minHeight: '100vh', padding: '2rem',
           fontFamily: 'system-ui, sans-serif', color: '#374151',
         }}>

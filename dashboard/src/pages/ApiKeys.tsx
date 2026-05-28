@@ -26,7 +26,7 @@ function useWindowSize() {
   return width;
 }
 
-const columnHelper = createColumnHelper<ApiKey>();
+const columnnHelper = createColumnHelper<ApiKey>();
 
 export function ApiKeys() {
   const { t } = useTranslation();
@@ -47,7 +47,7 @@ export function ApiKeys() {
   const windowWidth = useWindowSize();
   const isMobile = windowWidth < 768;
   const isSmall = windowWidth < 640;
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [columnnVisibility, setColumnVisibility] = useState<VisibilityState>({});
 
   useEffect(() => {
     setColumnVisibility({ key: !isSmall, lastUsed: !isMobile });
@@ -102,15 +102,15 @@ export function ApiKeys() {
     setTimeout(() => setCopied(null), 2000);
   };
 
-  const columns = useMemo(
+  const columnns = useMemo(
     () => [
-      columnHelper.accessor('name', {
-        header: () => t('apiKeys.columns.name'),
+      columnnHelper.accessor('name', {
+        header: () => t('apiKeys.columnns.name'),
         cell: info => <span className="name-cell">{info.getValue()}</span>,
       }),
-      columnHelper.accessor('keyPrefix', {
+      columnnHelper.accessor('keyPrefix', {
         id: 'key',
-        header: () => t('apiKeys.columns.key'),
+        header: () => t('apiKeys.columnns.key'),
         cell: info => {
           const apiKey = info.row.original;
           return (
@@ -123,30 +123,30 @@ export function ApiKeys() {
           );
         },
       }),
-      columnHelper.accessor('role', {
-        header: () => t('apiKeys.columns.role'),
+      columnnHelper.accessor('role', {
+        header: () => t('apiKeys.columnns.role'),
         cell: info => <span className="permission-badge">{info.getValue()}</span>,
       }),
-      columnHelper.accessor('isActive', {
-        header: () => t('apiKeys.columns.status'),
+      columnnHelper.accessor('isActive', {
+        header: () => t('apiKeys.columnns.status'),
         cell: info => (
           <span className={`status-badge ${info.getValue() ? 'active' : 'inactive'}`}>
             {info.getValue() ? t('apiKeys.statuses.active') : t('apiKeys.statuses.revoked')}
           </span>
         ),
       }),
-      columnHelper.accessor('lastUsedAt', {
+      columnnHelper.accessor('lastUsedAt', {
         id: 'lastUsed',
-        header: () => t('apiKeys.columns.lastUsed'),
+        header: () => t('apiKeys.columnns.lastUsed'),
         cell: info => (
           <span className="last-used">
             {info.getValue() ? new Date(info.getValue()!).toLocaleDateString() : t('common.never')}
           </span>
         ),
       }),
-      columnHelper.display({
+      columnnHelper.display({
         id: 'actions',
-        header: () => t('apiKeys.columns.actions'),
+        header: () => t('apiKeys.columnns.actions'),
         cell: info => {
           const apiKey = info.row.original;
           return (
@@ -184,8 +184,8 @@ export function ApiKeys() {
 
   const table = useReactTable({
     data: apiKeys,
-    columns,
-    state: { columnVisibility },
+    columnns,
+    state: { columnnVisibility },
     onColumnVisibilityChange: setColumnVisibility,
     getCoreRowModel: getCoreRowModel(),
   });
@@ -305,7 +305,7 @@ export function ApiKeys() {
                   <tr key={headerGroup.id} className="table-row header">
                     {headerGroup.headers.map(header => (
                       <th key={header.id}>
-                        {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                        {header.isPlaceholder ? null : flexRender(header.columnn.columnnDef.header, header.getContext())}
                       </th>
                     ))}
                   </tr>
@@ -315,7 +315,7 @@ export function ApiKeys() {
                 {table.getRowModel().rows.map(row => (
                   <tr key={row.id} className="table-row">
                     {row.getVisibleCells().map(cell => (
-                      <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                      <td key={cell.id}>{flexRender(cell.columnn.columnnDef.cell, cell.getContext())}</td>
                     ))}
                   </tr>
                 ))}

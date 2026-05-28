@@ -86,12 +86,12 @@ export function Logs() {
       <div className="logs-table-container">
         <div className="logs-table">
           <div className="table-row header">
-            <span>{t('logs.columns.timestamp')}</span>
-            <span>{t('logs.columns.action')}</span>
-            <span>{t('logs.columns.session')}</span>
-            <span>{t('logs.columns.apiKey')}</span>
-            <span>{t('logs.columns.ip')}</span>
-            <span>{t('logs.columns.severity')}</span>
+            <span>{t('logs.columnns.timestamp')}</span>
+            <span>{t('logs.columnns.action')}</span>
+            <span>{t('logs.columnns.session')}</span>
+            <span>{t('logs.columnns.apiKey')}</span>
+            <span>{t('logs.columnns.ip')}</span>
+            <span>{t('logs.columnns.severity')}</span>
           </div>
           {filteredLogs.length === 0 ? (
             <div className="empty-table-state">

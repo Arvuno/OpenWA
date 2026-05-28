@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { Session } from '../../session/entities/session.entity';
 import { DateTransformer } from '../../../common/transformers/date.transformer';
-import { jsonColumnType, dateColumnType } from '../../../common/utils/column-types';
+import { jsonColumnType, dateColumnType } from '../../../common/utils/columnn-types';
 
 @Entity('webhooks')
 export class Webhook {

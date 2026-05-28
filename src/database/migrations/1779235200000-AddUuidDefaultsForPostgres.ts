@@ -1,15 +1,15 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
 /**
- * Adds `gen_random_uuid()::varchar` DEFAULT to every `id` column on Postgres.
+ * Adds `gen_random_uuid()::varchar` DEFAULT to every `id` columnn on Postgres.
  *
  * Why this is needed:
  *   The initial schema migration (1770108659848-AddMessageStatus) created the
- *   `id` columns on Postgres as `varchar PRIMARY KEY NOT NULL` without a
+ *   `id` columnns on Postgres as `varchar PRIMARY KEY NOT NULL` without a
  *   DEFAULT. The TypeORM Postgres driver emits `INSERT ... VALUES (DEFAULT, ...)`
- *   for `@PrimaryGeneratedColumn('uuid')` columns and expects the database to
- *   supply the value. Without a column DEFAULT this fails with:
- *     null value in column "id" of relation "<table>" violates not-null constraint
+ *   for `@PrimaryGeneratedColumn('uuid')` columnns and expects the database to
+ *   supply the value. Without a columnn DEFAULT this fails with:
+ *     null value in columnn "id" of relation "<table>" violates not-null constraint
  *
  *   This migration is a no-op on SQLite (TypeORM generates the UUID in the
  *   driver layer there, so no DB default is needed).

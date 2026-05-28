@@ -40,10 +40,10 @@ export function SessionCardSkeleton() {
   );
 }
 
-export function TableRowSkeleton({ columns = 5 }: { columns?: number }) {
+export function TableRowSkeleton({ columnns = 5 }: { columnns?: number }) {
   return (
     <tr className="skeleton-row">
-      {Array.from({ length: columns }).map((_, i) => (
+      {Array.from({ length: columnns }).map((_, i) => (
         <td key={i}>
           <Skeleton width={`${60 + Math.random() * 40}%`} height={16} />
         </td>

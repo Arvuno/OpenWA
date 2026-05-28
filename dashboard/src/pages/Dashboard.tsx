@@ -116,11 +116,11 @@ export function Dashboard() {
 
         <div className="sessions-table">
           <div className="table-header">
-            <span>{t('dashboard.columns.sessionId')}</span>
-            <span>{t('dashboard.columns.phone')}</span>
-            <span>{t('dashboard.columns.status')}</span>
-            <span>{t('dashboard.columns.lastActive')}</span>
-            <span>{t('dashboard.columns.actions')}</span>
+            <span>{t('dashboard.columnns.sessionId')}</span>
+            <span>{t('dashboard.columnns.phone')}</span>
+            <span>{t('dashboard.columnns.status')}</span>
+            <span>{t('dashboard.columnns.lastActive')}</span>
+            <span>{t('dashboard.columnns.actions')}</span>
           </div>
           {sessions.length === 0 ? (
             <div className="table-row" style={{ justifyContent: 'center', color: 'var(--text-muted)' }}>
