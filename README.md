@@ -320,3 +320,6 @@ See [LICENSE](./LICENSE) for details.
 ## Contributing
 PRs welcome!
 </div>
+
+<!-- Contributor: Arvuno - documentation update -->
+
